@@ -23,9 +23,9 @@ int main(){
 
     int w=0,h=0;
     cout<<"Please input the width: "<<endl;
-    w=199;
+    cin>>w;
     cout<<"Please input the height: "<<endl;
-    h=199;
+    cin>>h;
 
     p1->Init(w,h);
 
@@ -35,4 +35,3 @@ int main(){
 
     return 0;
 }
-

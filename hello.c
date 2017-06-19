@@ -1,6 +1,7 @@
 #include <stdio.h>
+
 int main()
 {
-    printf("Hello \c World \n wang \tdejun");
-
+    
+	printf("Hello \c World \n wang \tdejun");
 }

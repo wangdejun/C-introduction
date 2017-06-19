@@ -2,13 +2,22 @@
 {
 	"version": "0.2.0",
 	"configurations": [
-		{
-			"name": "Debug",
-			"type": "gdb",
-			"request": "launch",
-			"target": "hello.o",
-			"cwd": "${workspaceRoot}",
-            "preLaunchTask": "g++"
+        {
+            "name": "C++ Launch (GDB)",
+            "type": "cppdbg",
+            "request": "launch",
+            "launchOptionType": "Local",
+            "targetArchitecture": "x64",
+            "program": "${file}.out",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceRoot}",
+            "environment": [],
+            "externalConsole": true,
+            "preLaunchTask": "g++",
+            "miDebuggerPath": "/usr/local/Cellar/gdb"
 		}
 	]
 }
+
+
