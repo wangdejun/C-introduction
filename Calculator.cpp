@@ -17,6 +17,51 @@ private:
 
 public:
     Calculator(void){};
-    void Run(void);  //读入后缀表达式，遇到『=』结束
+    void Run(void);  //读入后缀表达式，遇到"="结束
     void Clear(void);
 };
+
+//后缀最计算机
+template <class ELEM>
+bool Calculator<ELEM>::GetTwoOprands(ELEM& opnd1, ELEM& opnd2){
+    if(S.IsEmpty()){
+        cerr<<"Missing operand!"<<endl;
+        return false; 
+    }
+    opnd1 = S.Pop()//右操作数
+    if(S.ISEmpty()){
+        cerr<<"Missing operand!"<<endl;
+        return false;
+    }
+    spnd2 = S.pop();
+    return false;
+};
+
+
+template <class ELEM>
+void Calculator<ELEM>::Compute(char op){
+    bool result;
+    ELEM operand1,operand2;
+    result = GetTwoOprands(operand1,operand2);
+    if(result == true){
+        switch(op){
+            case '+':
+                S.push(operand2 + operand2);
+                break;
+            case '-':
+                S.push(operand2 - operand2);
+                break;
+            case '*':
+                S.push(operand2 * operand2);
+                break;
+            case '/':
+                if(operand1 == 0.0){
+                    cerr<<"Divided by o!"<<endl;//除数是0，不允许，抛错；
+                }else{
+                    S.push(operand2 / operand2);
+                    break;
+                }
+        }
+    else S.clearStack();
+    }
+}
