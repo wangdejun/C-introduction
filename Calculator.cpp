@@ -37,7 +37,6 @@ bool Calculator<ELEM>::GetTwoOprands(ELEM& opnd1, ELEM& opnd2){
     return false;
 };
 
-
 template <class ELEM>
 void Calculator<ELEM>::Compute(char op){
     bool result;
@@ -46,22 +45,42 @@ void Calculator<ELEM>::Compute(char op){
     if(result == true){
         switch(op){
             case '+':
-                S.push(operand2 + operand2);
+                S.push(operand2 + operand1);
                 break;
             case '-':
-                S.push(operand2 - operand2);
+                S.push(operand2 - operand1);
                 break;
             case '*':
-                S.push(operand2 * operand2);
+                S.push(operand2 * operand1);
                 break;
             case '/':
                 if(operand1 == 0.0){
                     cerr<<"Divided by o!"<<endl;//除数是0，不允许，抛错；
                 }else{
-                    S.push(operand2 / operand2);
+                    S.push(operand2 / operand1);
                     break;
                 }
         }
-    else S.clearStack();
+    }else{ 
+        S.clearStack();
     }
+}
+
+template <class ELEM>
+void Calculator<ELEM>::Run(void){
+    char c;
+    ELEM newoperand;
+    while(cin>>c, c!='='){
+        switch(c){
+            case '+':case '-':case '*':case '/':
+                Compute(c);
+                break;
+            default:
+                cin.putback(c);//把提前读出来的数放回去
+                cin>>newoperand;
+                break;
+        }
+    }
+    if(!S.isEmpty())
+        cout<<S.pop()<<endl;
 }
