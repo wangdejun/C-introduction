@@ -213,44 +213,73 @@
 // 	return p;
 // }
 
-#include <stdio.h>
-int binsearch(int x, int v[], int n);
+// #include <stdio.h>
+// int binsearch(int x, int v[], int n);
 
-int main()
-{
-	int arr[] = { 1, 2, 3, 20000,23454};
+// int main()
+// {
+// 	int arr[] = { 1, 2, 3, 20000,23454};
+
+// 	printf("%d\n",binsearch(23454, arr, 5));
+
+// }
+
+// int binsearch(int x, int v[], int n){
+// 	int low, high, mid;
+// 	low = 0;
+// 	high = n - 1;
+// 	while(low<=high){
+// 		mid = (low + high) / 2;
+// 		if(x < v[mid])
+// 			high = mid -1;
+// 		else if (x>v[mid])
+// 			low = mid + 1;
+// 		else
+// 			return mid;
+// 	}
+// 	return -1;
+// }
+
+// void shellsort(int v[], int n)
+// {
+// 	int gap, i, j, temp;
+// 	for(gap = n/2; gap>0;gap/=2)
+// 	{
+// 		for(i = gap; i < n; i++){
+// 			for(j = i - gap; j >= 0 && v[j] > v[j+gap]; j=j-gap){
+// 				temp = v[j];
+// 				v[j] = v[j+gap];
+// 				v[j+gap] = temp;
+// 			}
+// 		}
+// 	}
+// }
+
+
+// #include <stdio.h>
+// int main()
+// {
+// 	int x = 1;
+// 	int y = 2;
+// 	int z[10];
+// 	int *ip;
+// 	ip = &x;
+// 	printf("%d\n",ip);
+// 	printf("%d\n",&x);
+// 	printf("%d\n",&y);	
+// 	printf("%d\n",&z);		
 	
-	printf("%d\n",binsearch(23454, arr, 5));
+// }
 
-}
 
-int binsearch(int x, int v[], int n){
-	int low, high, mid;
-	low = 0;
-	high = n - 1;
-	while(low<=high){
-		mid = (low + high) / 2;
-		if(x < v[mid])
-			high = mid -1;
-		else if (x>v[mid])
-			low = mid + 1;
-		else
-			return mid;
-	}
-	return -1;
-}
-
-void shellsort(int v[], int n)
-{
-	int gap, i, j, temp;
-	for(gap = n/2; gap>0;gap/=2)
-	{
-		for(i = gap; i < n; i++){
-			for(j = i - gap; j >= 0 && v[j] > v[j+gap]; j=j-gap){
-				temp = v[j];
-				v[j] = v[j+gap];
-				v[j+gap] = temp;
-			}
-		}
-	}
-}
+// #include <stdio.h>
+// int main()
+// {
+// 	int z[10] = {10,11,12,13,14,15,16,17,18,19};
+// 	int *pa;
+// 	pa = &z[0];
+// 	printf("%d",*pa);
+// 	pa++;
+// 	printf("%d",*pa);	
+	
+// }
