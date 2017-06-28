@@ -331,3 +331,27 @@
 //         ++i;
 //     }
 // }
+
+
+#include <string.h>
+#include <stdio.h>
+
+void reverse(char s[]);
+
+int main(){
+    char name[] = {'w','a','n','g','d','e','j'};
+    reverse(name);
+    for(int i=0;i<strlen(name);i++){
+        printf("%c", name[i]);
+    }
+}
+
+void reverse(char s[]){
+    int c, i, j;
+    for(i =0, j=strlen(s)-1; i<j; i++, j--)
+    {   
+        c = s[i];
+        s[i] = s[j];
+        s[j] = c;
+    }
+};
