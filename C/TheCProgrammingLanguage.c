@@ -333,25 +333,74 @@
 // }
 
 
-#include <string.h>
+// #include <string.h>
+// #include <stdio.h>
+
+// void reverse(char s[]);
+
+// int main(){
+//     char name[] = {'w','a','n','g','d','e','j'};
+//     reverse(name);
+//     for(int i=0;i<strlen(name);i++){
+//         printf("%c", name[i]);
+//     }
+// }
+
+// void reverse(char s[]){
+//     int c, i, j;
+//     for(i =0, j=strlen(s)-1; i<j; i++, j--)
+//     {   
+//         c = s[i];
+//         s[i] = s[j];
+//         s[j] = c;
+//     }
+// };
+
+
 #include <stdio.h>
+#include <string.h>
 
-void reverse(char s[]);
-
-int main(){
-    char name[] = {'w','a','n','g','d','e','j'};
-    reverse(name);
-    for(int i=0;i<strlen(name);i++){
-        printf("%c", name[i]);
+void qsort(int v[], int left, int right);
+void swap(int v[], int i, int j);
+int main()
+{
+    int i = 0;
+    int numbers[] = {1,2,3,4,5,12,644,5,3,34,4,34,44556,21,122,334};
+    qsort(numbers, 0, 16);
+    for(i =0;i<16;i++){
+        printf("%d, ", numbers[i]);
     }
+    return 0;
 }
 
-void reverse(char s[]){
-    int c, i, j;
-    for(i =0, j=strlen(s)-1; i<j; i++, j--)
-    {   
-        c = s[i];
-        s[i] = s[j];
-        s[j] = c;
+void qsort(int v[], int left, int right)
+{
+    int i, last;
+    void swap(int v[], int i, int j);
+
+    if(left >= right)
+    {
+        return;
     }
-};
+    swap(v, left, (left+right)/2);
+    last = left;
+    for(i=left+1; i<=right; i++)
+    {
+        if(v[i]<v[left])
+        {
+            swap(v, ++last, i);
+        }
+    }
+    swap(v, left, last); /* 恢复划分子集的元素*/
+    qsort(v, left, last -1);
+    qsort(v, last+1, right);
+}
+
+void swap(int v[], int i, int j)
+{
+    int temp;
+    temp = v[i];
+    v[i] = v[j];
+    v[j] = temp;
+}
+
