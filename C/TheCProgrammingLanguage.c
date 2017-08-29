@@ -365,13 +365,14 @@ void swap(int v[], int i, int j);
 int main()
 {
     int i = 0;
-    int numbers[] = {1,2,3,4,5,12,644,5,3,34,4,34,44556,21,122,334};
+    int numbers[] = {1,2,3,4,5,12,644,5,3,34,4,34,44556,21,122,334,'w', 'd'};
     qsort(numbers, 0, 16);
     for(i =0;i<16;i++){
         printf("%d, ", numbers[i]);
     }
     return 0;
 }
+
 
 void qsort(int v[], int left, int right)
 {
