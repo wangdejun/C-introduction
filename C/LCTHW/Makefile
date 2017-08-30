@@ -10,4 +10,5 @@ clean all:
 	rm -f ex8
 	rm -f ex10
 	rm -f ex16
+	rm -f ex18	
 		
