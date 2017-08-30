@@ -51,7 +51,7 @@ void *Room_move(void *self, Direction direction)
         printf("You go west, into :\n");
         next = room->west;
     }else{
-        printf("You can't go that direction")
+        printf("You can't go that direction");
         next = NULL;//空指针
     }
 
@@ -173,11 +173,13 @@ int process_input(Map *game)
         case 'l':
             printf("You can go:\n");
             if(game->location->north)
-                printf("NORTH,欢迎来到临冬城\n");
+                printf("NORTH,欢迎来到临冬城,这里有小指头和珊莎\n");
             if(game->location->south)
                 printf("SOUTH,瑟曦和山姆在等着屠戮你，Welcome to 君临城\n");
-            if(game->location->east) printf("EAST\n");
-            if(game->location->west) printf("WEST\n");
+            if(game->location->east) 
+                printf("EAST\n");
+            if(game->location->west) 
+                printf("WEST\n");
             break;
 
         default:
@@ -186,3 +188,17 @@ int process_input(Map *game)
     return 1;
 }
 
+int main(int argc, char *argv[])
+{
+    //simple way to setup the randomness
+    srand(time(NULL));
+
+    //make our map to work with
+    Map *game = NEW(Map, "The Hall of the Minotaur");
+
+    printf("You enter the ");
+    game->location->_(describe)(game->location);
+
+    while(process_input(game)){}
+    return 0;
+}

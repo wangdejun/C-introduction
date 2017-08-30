@@ -35,7 +35,7 @@ struct Map{
     Room *location;
 };
 
-typedef stuct Map Map;
+typedef struct Map Map;
 
 void *Map_move(void *self, Direction direction);
 int Map_attack(void *self, int damage);
