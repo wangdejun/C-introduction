@@ -10,17 +10,18 @@ int Monster_attack(void *self, int damage)
     Monster *monster = self;
     printf("You attack %s! \n",monster->_(description));
 
-    monster->hit_points -= damage;
+    monster->hit_points = monster->hit_points - damage;
 
     if(monster->hit_points > 0){
-        printf("It is still alive.\n");
+        printf("我还没死呢，哈哈.\n");
         return 0;
     }else{
-        printf("It is dead!\n");
+        printf("它已经死了，伟大的勇士，你太厉害了\n");
         return 1;
     }
 }
 
+//Init properties of the monster
 int Monster_init(void *self)
 {
     Monster *monster = self;
