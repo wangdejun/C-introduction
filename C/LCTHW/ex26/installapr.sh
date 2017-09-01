@@ -1,7 +1,7 @@
 set -e
 
 # go somewhere safe
-cd /tmp
+cd /Users/wangdejun/LE/C++/C/LCTHW/ex26/
 
 # get the source to base APR 1.4.6
 curl -L -O http://archive.apache.org/dist/apr/apr-1.4.6.tar.gz
@@ -16,7 +16,7 @@ make
 sudo make install
 
 # reset and cleanup
-cd /tmp
+cd /Users/wangdejun/LE/C++/C/LCTHW/ex26
 rm -rf apr-1.4.6 apr-1.4.6.tar.gz
 
 # do the same with apr-util
@@ -35,5 +35,5 @@ make
 sudo make install
 
 #cleanup
-cd /tmp
+cd /Users/wangdejun/LE/C++/C/LCTHW/ex26
 rm -rf apr-util-1.4.1* apr-1.4.6*

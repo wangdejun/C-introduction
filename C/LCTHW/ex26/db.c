@@ -33,7 +33,7 @@ static bstring DB_load()
 
 error:
     if(db)
-        DB_close(db)
+        DB_close(db);
     if(data)
         bdestroy(data);
     return NULL;
