@@ -5,6 +5,8 @@
         "pthread.h": "c",
         "stdlib.h": "c",
         "typeinfo": "c",
-        "apr_uri.h": "c"
+        "apr_uri.h": "c",
+        "__locale": "c",
+        "iterator": "c"
     }
 }
