@@ -36,6 +36,11 @@ int main(int argc, char *argv[])
     }
     printf("------\n");
 
+
+    //4th way with pointers in a stupid complex way
+    for(cur_name = names, cur_age=ages; (cur_age-ages)<count; cur_name++,cur_age++){
+        printf("%s lived %d years old so far\n", *cur_name, *cur_age);
+    }
     
     return 0;
 
