@@ -16,7 +16,7 @@ void print_arguments(int argc, char *argv[])
 void print_letters(char arg[])
 {
     int i=0;
-    for(i=0; arg[i] !='\0';i++){
+    for(i=1; arg[i] !='\0';i++){
         char ch = arg[i];
         if(can_print_it(ch)){
             printf("'%c' == %d\t",ch, ch);
