@@ -10,12 +10,13 @@ int main(int argc, char *argv[])
         printf("Here's your arguments:\n");
 
         for(i=0; i<argc; i++){
-            printf("%s", argv[i]);
+            printf("%s\t", argv[i]);
         }
 
         printf("\n");
     }else{
         printf("You have too many arguments. You suck.\n");
     }
+
     return 0;
 }
