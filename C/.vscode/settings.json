@@ -8,6 +8,7 @@
         "apr_uri.h": "c",
         "__locale": "c",
         "iterator": "c",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "iostream": "cpp"
     }
 }

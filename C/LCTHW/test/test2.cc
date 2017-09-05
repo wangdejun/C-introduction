@@ -11,5 +11,9 @@ int main(){
     int b = 077;
     cout << dec << b <<endl;
     cout << hex << b <<endl;
+
+    signed int c =  0x7FFFFFFF;
+    c++;
+    cout << dec << c <<endl;
     return 0;
 }
