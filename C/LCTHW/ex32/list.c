@@ -70,7 +70,7 @@ void List_unshift(List *list, void *value)
 
     node->value = value;
 
-    if(list->first = NULL)
+    if(list->first == NULL)
     {
         list->first = node;
         list->last = node;
