@@ -7,4 +7,4 @@ def fib(n):
         k = k + 1                       # Re-bind k
     return curr
 
-print fib(13)
+print fib(11)
