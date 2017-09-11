@@ -7,7 +7,10 @@
 #define MAX_DATA 512
 #define MAX_ROWS 100
 
-//定长结构体
+//定长结构体 Adress
+/**
+    * int id, int set, char name[MAX_DATA], char email[MAX_DATA]
+*/
 struct Address{
     int id;
     int set;
@@ -15,14 +18,18 @@ struct Address{
     char email[MAX_DATA];
 };
 
+//由结构体组成的结构体
 struct Database{
     struct Address rows[MAX_ROWS];
 };
+
+//包含一个指向file的pointer:
 
 struct Connection{
     FILE *file;
     struct Database *db;
 };
+
 //出现错误时终止的die函数
 void die(const char *message)
 {
@@ -42,7 +49,8 @@ void Address_print(struct Address *addr)
 void Database_load(struct Connection *conn)
 {
     int rc = fread(conn->db, sizeof(struct Database), 1, conn->file);
-    if(rc !=1) die("Failed to load database.");
+    if(rc !=1) 
+        die("Failed to load database.");
 }
 
 struct Connection *Database_open(const char *filename, char mode)
@@ -70,8 +78,10 @@ struct Connection *Database_open(const char *filename, char mode)
 void Database_close(struct Connection *conn)
 {
     if(conn){
-        if(conn->file) fclose(conn->file);
-        if(conn->db) free(conn->db);
+        if(conn->file) 
+            fclose(conn->file);
+        if(conn->db) 
+            free(conn->db);
         free(conn);
     }
 }
@@ -143,6 +153,7 @@ void Database_list(struct Connection *conn)
     }
 }
 
+//main function
 int main(int argc, char *argv[])
 {
     if(argc < 3)
@@ -155,6 +166,7 @@ int main(int argc, char *argv[])
 
     if(argc > 3)  
         id=atoi(argv[3]);
+
     if(id >= MAX_ROWS)
         die("There's not that many records.");
 
@@ -163,6 +175,7 @@ int main(int argc, char *argv[])
             Database_create(conn);
             Database_write(conn);
             break;
+
         case 'g':
             if(argc !=4)
                 die("Need an id to get");
@@ -175,11 +188,13 @@ int main(int argc, char *argv[])
             Database_set(conn,id, argv[4], argv[5]);
             Database_write(conn);
             break;
+
         case 'd':
             if(argc != 4) die("Need id to delete");
             Database_delete(conn,id);
             Database_write(conn);
             break;
+
         case 'l':
             Database_list(conn);
             break;
