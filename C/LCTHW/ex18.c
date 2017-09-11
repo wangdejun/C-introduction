@@ -21,6 +21,7 @@ typedef int (*compare_cb)(int a, int b);
 
 /**
   *  A classic bubble sort function that uses the compare_b todo the sorting
+  *  使用compare cmp函数来做的经典冒泡排序
   */
 
 int *bubble_sort(int *numbers, int count, compare_cb cmp)
@@ -33,8 +34,9 @@ int *bubble_sort(int *numbers, int count, compare_cb cmp)
         die("Memory Error.");
 
     memcpy(target, numbers, count * sizeof(int));
-
+    //外层循环
     for(i = 0; i < count; i++){
+        //内层循环
         for(j=0; j< count-1;j++){
             if(cmp(target[j], target[j+1]) > 0){
                 temp = target[j+1];
