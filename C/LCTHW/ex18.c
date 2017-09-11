@@ -4,6 +4,7 @@
 #include <string.h>
 
 /*Our old friend die from ex 17*/
+//传一个常亮字符指针 *message
 void die(const char *message)
 {
     if(errno){
@@ -15,6 +16,7 @@ void die(const char *message)
 }
 
 // a typedef creates a type in this case for a function pointer
+//用typedef确定一个函数指针
 typedef int (*compare_cb)(int a, int b);
 
 /**
@@ -69,7 +71,7 @@ int strange_order(int a, int b)
  * in the function below, we pass 3 params including a callback function's pointer
  * notice it!
  */
- 
+
 void test_sorting(int *numbers, int count, compare_cb cmp)
 {
     int i = 0;
