@@ -14,7 +14,7 @@ void die(const char *message)
     exit(1);
 }
 
-// a typedef creates a fke type in this case for a function pointer
+// a typedef creates a type in this case for a function pointer
 typedef int (*compare_cb)(int a, int b);
 
 /**
@@ -69,6 +69,7 @@ int strange_order(int a, int b)
  * in the function below, we pass 3 params including a callback function's pointer
  * notice it!
  */
+ 
 void test_sorting(int *numbers, int count, compare_cb cmp)
 {
     int i = 0;
