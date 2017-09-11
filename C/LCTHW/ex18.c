@@ -47,17 +47,17 @@ int *bubble_sort(int *numbers, int count, compare_cb cmp)
     }
     return target;
 }
-
+//正序
 int sorted_order(int a, int b)
 {
     return a-b;
 }
-
+//逆序
 int reverse_order(int a, int b)
 {
     return b-a;
 }
-
+//其他顺序
 int strange_order(int a, int b)
 {
     if(a == 0||b==0){
@@ -97,6 +97,8 @@ void test_sorting(int *numbers, int count, compare_cb cmp)
     printf("\n");
 }
 
+
+//The main function
 int main(int argc, char *argv[])
 {
     if(argc < 2)
@@ -117,6 +119,7 @@ int main(int argc, char *argv[])
     test_sorting(numbers, count, sorted_order);
     test_sorting(numbers, count, reverse_order);
     test_sorting(numbers, count, strange_order);
+
 
     free(numbers);
     return 0;
