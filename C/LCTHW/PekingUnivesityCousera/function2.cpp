@@ -27,7 +27,6 @@ int main()
     int a = -100;
     cout<<Absolute(a)<<endl;
     
-    
     char name[] = {'w','a','n'};
     cout<<nextArrayChar(name)<<endl;
     return 0;
