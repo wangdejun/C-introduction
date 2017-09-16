@@ -13,8 +13,7 @@ int Absolute(int n){
 //传入一个pointer?
 char nextArrayChar(char *n){
     if(*(++n)){
-        n--;
-        return *(++n);
+        return *(n);
     }else{
         printf("You Array char lenght is not enough");
         return 0;
@@ -24,12 +23,12 @@ char nextArrayChar(char *n){
 int main()
 {
     int a = -1233;
-    printf("%d的绝对值是%d\n",a ,Absolute(a));
+    printf("%d的绝对值是：%d\n",a ,Absolute(a));
     printf("--------------");
     
 
     char charArray[] = {'w','a','n','g'};
-    printf("%c\n",nextArrayChar(charArray));
-
+    printf("字符串中下一个字符是：%c\n",nextArrayChar(charArray));
+    
     return 0;
 }
