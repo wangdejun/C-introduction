@@ -25,4 +25,4 @@ third = make_rat(1, 3)
 print str_rat(mul_rat(half, third))
 
 print u"Is this equal?"
-print eq_rat(mul_rat(half, third),mul_rat(half, third))
+print eq_rat(mul_rat(half, third), mul_rat(half, third))
