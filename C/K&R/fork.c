@@ -1,3 +1,9 @@
+/**
+ * 操作系统原理(Peking University)
+ * 子进程和父进程例程
+ * [video address]https://www.bilibili.com/video/av9555596/index_24.html#page=15
+ */
+
 #include <sys/types.h>
 #include <stdio.h>
 #include <unistd.h>
@@ -17,7 +23,7 @@ int main()
     {
         /*父进程空间*/
         printf("the child process pid is:%d\n", pid);
-        wait(NULL);/*parent process wait for the child process to execute finish*/
+        wait(NULL);/* parent process wait for the child process to execute finish */
         printf("child complete\n");
     }
     return 0;
