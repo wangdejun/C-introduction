@@ -1,0 +1,4 @@
+task_1:task_1
+	echo "Hello world"
+task_2:task_2
+	echo 2
