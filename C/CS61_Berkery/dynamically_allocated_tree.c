@@ -7,6 +7,13 @@ typedef struct node{
   struct node *right;
 }Node;
 
+/**
+ * parameters
+ * ------------
+ * int key 整数类型key
+ * Node *left,
+ * Node *right
+ */
 Node *create_node(int key, Node *left, Node *right){
   Node *np;
   if((np=malloc(sizeof(Node)))==NULL){
@@ -37,5 +44,6 @@ int main(void){
   insert(10, &root);
   printf("%d",(*root).key);
   insert(16, &root);
+  printf("%d",(*((*root).right)).key );
   insert(5, &root);
 }
