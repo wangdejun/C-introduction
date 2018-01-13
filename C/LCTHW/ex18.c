@@ -120,7 +120,6 @@ int main(int argc, char *argv[])
     test_sorting(numbers, count, reverse_order);
     test_sorting(numbers, count, strange_order);
 
-
     free(numbers);
     return 0;
 }
