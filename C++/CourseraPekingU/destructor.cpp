@@ -10,7 +10,6 @@ class Ctest{
         }
 };
 
-
 int main(){
     //we new 2instances ,when the main program was ended;
     //the destructor will be call 2 times;
