@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <string.h>
 #include <iostream>
+#include <string.h>
 using namespace std;
 
 class CStudent
@@ -10,7 +10,6 @@ class CStudent
         string id;
         char gender;
         int age;
-
     public:
         void PrintInfo();
         void SetInfo(const string & name_, const string & id_, int age_, char gender_);
@@ -34,12 +33,7 @@ class CUndergraduateStudent : public CStudent
             CStudent::PrintInfo();
             cout<<"Department"<<department<<endl;
         }
-        void SetInfo(const string & name_, 
-                    const string & id_, 
-                    int age_, 
-                    char gender_, 
-                    const string &department_)
-        {
+        void SetInfo(const string & name_, const string & id_, int age_, char gender_, const string & department_){
             //call the function in the CStudent base class
             //making the CUndergraduate subclass inherits functions in the CStudent Class;
             CStudent::SetInfo(name_, id_, age_, gender_);
@@ -51,12 +45,14 @@ int main()
 {
     CUndergraduateStudent s2;
     s2.SetInfo("WangDejun", "111111111", 29, 'M', "ComputerScience");
-    cout<<s2.GetName()<<"";
+    cout<<s2.GetName()<<" ";
     s2.QualifiedForBaoyan();
     s2.PrintInfo();
     return 0;
 }
+
 /**
+ * Cannot figure out the reason
 [Running] cd "/Users/wangdejun/LE/C++/C++/CourseraPekingU/" && g++ students.cpp -o students && "/Users/wangdejun/LE/C++/C++/CourseraPekingU/"students
 Undefined symbols for architecture x86_64:
   "CStudent::SetInfo(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int, char)", referenced from:
