@@ -9,7 +9,9 @@ class Bug{
     public:
         int nType;
         Bug(int legs, int color);
-        void PrintBug(){};
+        void PrintBug(){
+            cout<<"-----"<<endl;
+        };
 };
 
 class FlyBug: public Bug{
@@ -29,6 +31,9 @@ FlyBug::FlyBug(int legs, int color, int wings){
 }
 */
 
+//call the constructor function in Base Class;
+//derived class constructor -> BaseClass's constructor provide the arguments;
+//derived::derived(arg_derived-list):base(arg_base-list)
 FlyBug::FlyBug(int legs, int color, int wings):Bug(legs, color){
     nWings = wings;
 }
