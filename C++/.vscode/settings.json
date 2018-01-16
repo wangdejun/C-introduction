@@ -3,6 +3,7 @@
         "ostream": "cpp",
         "sstream": "cpp",
         "__functional_03": "cpp",
-        "functional": "cpp"
+        "functional": "cpp",
+        "iostream": "cpp"
     }
 }
