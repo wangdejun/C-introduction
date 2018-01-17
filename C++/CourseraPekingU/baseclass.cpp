@@ -10,6 +10,7 @@ class Base{
         {
             cout<<"Base"<<n<<"constructed"<<endl;
         }
+        //析构函数
         ~Base()
         {
             cout<<"Base"<<n<<"destructed"<<endl;
@@ -23,6 +24,7 @@ class Derived:public Base{
         {
             cout<<"Derived constructed"<<endl;
         }
+        //析构函数
         ~Derived()
         {
             cout<<"Derived destructed"<<endl;
