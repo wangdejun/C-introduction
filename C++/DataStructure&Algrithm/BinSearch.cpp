@@ -1,8 +1,8 @@
 #include <iostream>
 using namespace std;
 
-template <class Type> int BinSearch(vector<Item<Type>*>& dataList,int length,Type k){
-    int low = 1,high = length,mid;
+template <class Type> int BinSearch(vector<Item<Type>*>& dataList,int length, Type k){
+    int low = 1, high = length, mid;
     while(low<high){
         mid = (low+high)/2;
         if(k<dataList[mid]->getKey())
@@ -14,8 +14,6 @@ template <class Type> int BinSearch(vector<Item<Type>*>& dataList,int length,Typ
     }
     return 0;
 }
-
-
 
 
 
