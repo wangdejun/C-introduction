@@ -13,10 +13,4 @@ template <class Type> int BinSearch(vector<Item<Type>*>& dataList,int length, Ty
             return mid;
     }
     return 0;
-}
-
-
-
-int main(){
-    BinSearch()
-}
+};
